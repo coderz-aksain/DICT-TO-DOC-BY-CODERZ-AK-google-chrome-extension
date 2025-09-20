@@ -1,0 +1,339 @@
+/* Modal Styles */
+.word-dict-modal-hidden {
+  display: none !important;
+}
+
+.word-dict-modal-visible {
+  display: flex !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.word-dict-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.word-dict-modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.word-dict-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.word-dict-modal-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.word-dict-close-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.word-dict-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.word-dict-modal-body {
+  padding: 24px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.word-dict-selected-word h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 24px 0;
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-origin: border-box;
+  position: relative;
+}
+
+.word-dict-selected-word h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  padding: 2px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask-composite: subtract;
+  z-index: -1;
+}
+
+.word-dict-loading {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 16px;
+}
+
+.word-dict-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.word-dict-loading p {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.word-dict-meanings {
+  display: none;
+}
+
+.word-dict-meaning-section {
+  margin-bottom: 24px;
+}
+
+.word-dict-meaning-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.word-dict-meaning-content {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 4px solid #667eea;
+}
+
+.word-dict-definition {
+  margin-bottom: 16px;
+}
+
+.word-dict-definition:last-child {
+  margin-bottom: 0;
+}
+
+.word-dict-part-of-speech {
+  background: #667eea;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.word-dict-definition-text {
+  margin: 8px 0 4px 0;
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.word-dict-example {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.word-dict-hindi-text {
+  font-size: 18px;
+  color: #374151;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.word-dict-error {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.word-dict-error p {
+  color: #ef4444;
+  font-size: 16px;
+  margin: 0;
+}
+
+.word-dict-modal-footer {
+  padding: 24px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.word-dict-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.word-dict-btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.word-dict-btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.word-dict-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.word-dict-btn-primary:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.word-dict-success-message {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: slideDown 0.3s ease-out;
+}
+
+.word-dict-error-message {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ef4444;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .word-dict-modal-backdrop {
+    padding: 16px;
+  }
+  
+  .word-dict-modal-content {
+    max-height: 90vh;
+  }
+  
+  .word-dict-modal-header,
+  .word-dict-modal-body,
+  .word-dict-modal-footer {
+    padding: 16px;
+  }
+  
+  .word-dict-selected-word h3 {
+    font-size: 24px;
+  }
+  
+  .word-dict-modal-footer {
+    flex-direction: column;
+  }
+  
+  .word-dict-btn {
+    justify-content: center;
+  }
+}

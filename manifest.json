@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Word Dictionary & Google Docs Saver",
+  "version": "1.0",
+  "description": "Get English and Hindi meanings of selected text and save to Google Docs",
+  "permissions": [
+    "activeTab",
+    "identity",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.dictionaryapi.dev/*",
+    "https://translate.googleapis.com/*",
+    "https://docs.googleapis.com/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Word Dictionary"
+  },
+  "oauth2": {
+    "client_id": "442604154912-7koj2j6ven7vbk4ek2dsrkoqrimb3lim.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/documents",
+      "https://www.googleapis.com/auth/drive.file"
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "32": "icons/icon32.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Dictionary</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <div class="popup-logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+      </div>
+      <div>
+        <h1 class="popup-title">Word Dictionary</h1>
+        <p class="popup-subtitle">English & Hindi meanings</p>
+      </div>
+    </div>
+    
+    <div class="popup-content">
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <div class="feature-text">
+          <h3>Select any text</h3>
+          <p>Highlight words on any webpage to see their meanings</p>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <div class="feature-text">
+          <h3>Bilingual support</h3>
+          <p>Get meanings in both English and Hindi</p>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <div class="feature-text">
+          <h3>Save to Google Docs</h3>
+          <p>Build your personal dictionary collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="popup-footer">
+      <div class="auth-section">
+        <button id="auth-btn" class="auth-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path>
+            <path d="M14.5 2v4h4"></path>
+          </svg>
+          Connect Google Docs
+        </button>
+        <p class="auth-status" id="auth-status">Not connected</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
